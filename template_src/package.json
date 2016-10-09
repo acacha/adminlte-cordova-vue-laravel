@@ -1,12 +1,16 @@
 {
-  "name": "TemplateProject",
+  "name": "AdminLTECordovaVueTemplateProject",
   "version": "1.0.0",
-  "description": "This is the project created from the template: cordova_template",
+  "description": "This is the project created from the template: adminlte-vue-cordova",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "ecosystem:cordova"
+    "ecosystem:cordova",
+    "adminlte",
+    "vue",
+    "Laravel",
+    "passport"
   ],
-  "license": "ISC"
+  "license": "MIT"
 }

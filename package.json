@@ -1,20 +1,24 @@
 {
-  "name": "cordova-template",
+  "name": "adminlte-vue-cordova",
   "version": "1.0.0",
-  "description": "A reference for creating cordova app templates.",
+  "description": "A template for creating Javascript pure apps for Cordova with Vue.js an Laravel passport.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/carynbear/cordova-template.git"
+    "url": "https://github.com/acacha/adminlte-vue-cordova.git"
   },
-  "homepage": "https://github.com/carynbear/cordova-template",
+  "homepage": "https://github.com/acacha/adminlte-vue-cordova",
   "keywords": [
     "ecosystem:cordova",
-    "cordova:template"
+    "cordova:template",
+    "adminlte",
+    "vue",
+    "Laravel",
+    "Passport"
   ],
-  "author": "Caryn Tran",
-  "license": "Apache-2.0"
+  "author": "Sergi Tur Badenas",
+  "license": "MIT"
 }
