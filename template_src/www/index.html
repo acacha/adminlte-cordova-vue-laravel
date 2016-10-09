@@ -10,22 +10,77 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/;font-src https://fonts.gstatic.com 'self'; media-src *;connect-src wss://ws.pusherapp.com ws://ws.pusherapp.com;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/all.css">
         <title>An AdminLTE Template for Cordova using Vue.js and Laravel Passport</title>
+
+        <script type="text/javascript" src="js/csrftoken.js"></script>
     </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova adminlte-vue-laravel</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+    <body class="hold-transition login-page">
+    <div id="app">
+        <div class="login-box">
+        <div class="login-logo">
+            <a href="../../index2.html"><b>Admin</b>LTE</a>
         </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+            <form action="../../index2.html" method="post">
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="Email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <div class="social-auth-links text-center">
+                <p>- OR -</p>
+                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+                    Facebook</a>
+                <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+                    Google+</a>
+            </div>
+            <!-- /.social-auth-links -->
+
+            <a href="#">I forgot my password</a><br>
+            <a href="register.html" class="text-center">Register a new membership</a>
+
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+        <!-- /.login-box -->
+    </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script>
+            $(function () {
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_square-blue',
+                    radioClass: 'iradio_square-blue',
+                    increaseArea: '20%' // optional
+                });
+            });
+        </script>
     </body>
 </html>
