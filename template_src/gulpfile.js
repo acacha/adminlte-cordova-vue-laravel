@@ -16,12 +16,14 @@ elixir.config.publicPath = 'www';
  */
 
 elixir(mix => {
-    mix.less('./node_modules/admin-lte/build/less/AdminLTE.less')
+    mix.sass('app.scss')
+       .less('./node_modules/admin-lte/build/less/AdminLTE.less')
        .less('adminlte-app.less')
        .styles([
             './www/css/AdminLTE.css',
             './www/css/adminlte-app.css',
             './node_modules/admin-lte/dist/css/skins/_all-skins.css',
+            './www/css/app.css',
             './node_modules/icheck/skins/square/blue.css',
         ])
        .copy('resources/assets/js/csrftoken.js','www/js/csrftoken.js')
@@ -32,5 +34,6 @@ elixir(mix => {
        .copy('node_modules/admin-lte/dist/img','www/img')
        .copy('node_modules/admin-lte/plugins','www/plugins')
        .copy('node_modules/icheck/skins/square/blue.png','www/css')
+       .copy('node_modules/icheck/skins/square/blue@2x.png','www/css')
        .webpack('app.js');
 });
