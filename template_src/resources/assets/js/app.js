@@ -15,8 +15,27 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+var example  = Vue.component('example', require('./components/Example.vue'));
+var login    = Vue.component('login', require('./components/Login.vue'));
+var register = Vue.component('register', require('./components/Register.vue'));
+var home = Vue.component('home', require('./components/Home.vue'));
+var reset = Vue.component('reset', require('./components/ResetPassword.vue'));
+
+// 3. Create the router
+const router = new VueRouter({
+    mode: 'history',
+    base: __dirname,
+    routes: [
+        { path: '/', component: login },
+        { path: '/login', component: login },
+        { path: '/register', component: register },
+        { path: '/example', component: example },
+        { path: '/home', component: home },
+        { path: '/resetpassword', component: reset },
+    ]
+})
 
 const app = new Vue({
+    router,
     el: '#app'
 });
